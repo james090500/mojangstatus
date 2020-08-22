@@ -8,6 +8,7 @@
 
 <style>
   .btn-action {
+    z-index: 100;
     padding: 0 1rem !important;
     position: absolute;
     right: 2rem;
