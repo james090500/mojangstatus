@@ -7,15 +7,20 @@ Vue.config.productionTip = false
 require("halfmoon/css/halfmoon.min.css");
 
 // Import JS Library
-window.halfmoon = require("halfmoon");
+var halfmoon = require("halfmoon");
+window.halfmoon = halfmoon;
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCopyright } from '@fortawesome/free-regular-svg-icons'
 import { faFrown } from '@fortawesome/free-regular-svg-icons'
 import { faMeh } from '@fortawesome/free-regular-svg-icons'
 import { faSmile } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(faGithub);
+library.add(faCopyright);
 library.add(faSmile);
 library.add(faMeh);
 library.add(faFrown);

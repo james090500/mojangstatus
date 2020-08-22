@@ -17,7 +17,8 @@
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "halfmoon": "^1.0.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-tweet-embed": "^2.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
