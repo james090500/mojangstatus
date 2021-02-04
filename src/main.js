@@ -12,19 +12,10 @@ window.halfmoon = halfmoon;
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCopyright, faFrown, faMeh, faSmile, faSync } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faCopyright } from '@fortawesome/free-regular-svg-icons'
-import { faFrown } from '@fortawesome/free-regular-svg-icons'
-import { faMeh } from '@fortawesome/free-regular-svg-icons'
-import { faSmile } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-library.add(faGithub);
-library.add(faCopyright);
-library.add(faSmile);
-library.add(faMeh);
-library.add(faFrown);
-
+library.add(faCopyright, faFrown, faMeh, faSmile, faSync, faGithub);
 Vue.component('fa', FontAwesomeIcon)
 
 new Vue({

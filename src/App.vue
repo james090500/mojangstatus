@@ -1,41 +1,19 @@
 <template>
-  <div class="page-wrapper with-navbar-fixed-bottom">
-    <button class="btn btn-action" @click="toggleDarkMode()">🌓</button>
-    <ApiCheck :darkMode="darkMode"/>
-    <Footer/>
-  </div>
+    <div class="page-wrapper with-navbar-fixed-bottom">
+        <ApiCheck/>
+        <FooterElement/>
+    </div>
 </template>
 
-<style>
-  .btn-action {
-    z-index: 100;
-    padding: 0 1rem !important;
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-  }
-</style>
-
 <script>
-import ApiCheck from './components/ApiCheck.vue'
-import Footer from './components/Footer.vue'
+    import ApiCheck from './components/ApiCheck.vue'
+    import FooterElement from './components/FooterElement.vue'
 
-export default {
-  name: 'App',
-  components: {
-    ApiCheck,
-    Footer
-  },
-  data() {
-    return {
-      darkMode: halfmoon.darkModeOn == "yes" ? "dark" : "light"
+    export default {
+        name: 'App',
+        components: {
+            ApiCheck,
+            FooterElement
+        }
     }
-  },
-  methods: {
-    toggleDarkMode: function() {
-      halfmoon.toggleDarkMode();
-      this.darkMode = halfmoon.darkModeOn == "yes" ? "dark" : "light"
-    }
-  }
-}
 </script>
