@@ -1,0 +1,6 @@
+name = "mojangstatus"
+main = "src/index.js"
+compatibility_date = "2022-06-23"
+
+account_id = "5eb447f7a1d6f6bfb906d986368403f2"
+route = "api.mojangstat.us/*"
