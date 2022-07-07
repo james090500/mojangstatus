@@ -21,7 +21,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-# Ignore SSL
-ssl.crt
-ssl.key

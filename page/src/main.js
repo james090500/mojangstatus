@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
 
-Vue.config.productionTip = false
+// Pages
+import MojangStatus from './MojangStatus.vue'
 
-// Include CSS file
+// Create Vue App
+const app = createApp(MojangStatus);
+
+// Include Halfmoon
 require("halfmoon/css/halfmoon.min.css");
-
-// Import JS Library
-var halfmoon = require("halfmoon");
-window.halfmoon = halfmoon;
+import "halfmoon";
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -16,8 +16,15 @@ import { faCopyright, faFrown, faMeh, faSmile, faSync } from '@fortawesome/free-
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faCopyright, faFrown, faMeh, faSmile, faSync, faGithub);
-Vue.component('fa', FontAwesomeIcon)
+app.component("font-awesome-icon", FontAwesomeIcon);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+// Axios
+app.config.globalProperties.$baseUrl = (process.env.NODE_ENV == "development") ? 'http://localhost:8787' : 'https://api.mojangstat.us'
+import axios from "axios";
+let axiosInstance = axios.create({
+    baseURL: app.config.globalProperties.$baseUrl
+});
+app.config.globalProperties.axios = axiosInstance;
+
+// Mount Vue app
+app.mount("#app");
